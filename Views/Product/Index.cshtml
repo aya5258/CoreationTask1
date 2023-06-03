@@ -1,0 +1,59 @@
+﻿@using ProductCustomer.Models;
+
+@model IEnumerable<Product>
+
+
+<div class="container">
+    <h4 class="text-success">Products List</h4>
+</div>
+
+<table id="myTable" class="display">
+    <thead>
+        <tr>
+            <th> Name</th>
+            <th>Price</th>
+  
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+              
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12" style="background-color: #f8f9fa; padding: 10px;">
+
+            <button class="btn btn-primary">Add new Product</button>
+        </div>
+    </div>
+</div>
+<link href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+
+@section scripts{
+
+
+    <script type="text/javascript" src=//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js></script>
+
+    <script>
+
+        $(document).ready(function () {
+            $('#myTable').DataTable({
+
+                "searching": true,
+            });
+        });
+    </script>
+
+
+}

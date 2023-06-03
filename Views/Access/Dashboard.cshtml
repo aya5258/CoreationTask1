@@ -1,0 +1,14 @@
+﻿
+@using ProductCustomer.Models
+@model ApplicationUser
+
+
+
+<h1 class="text-success">Welcome to the dashboard</h1>
+
+@if (User.IsInRole("Admin"))
+{
+    <p>You are an administrator.</p>
+}
+
+<p><a asp-controller="Access" asp-action="Register">Logout</a></p>
